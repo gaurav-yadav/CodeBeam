@@ -1,0 +1,27 @@
+{
+  "name": "codebeam",
+  "version": "1.0.0",
+  "description": "An intelligent error monitoring system that automatically detects errors in log files and generates AI-ready prompts for quick problem resolution. The system watches both log files and clipboard content, making it easy to implement AI-suggested fixes.",
+  "main": "src/index.js",
+  "scripts": {
+  "start": "node src/index.js",
+  "dev": "node src/index.js --log app.log"
+},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gaurav-yadav/CodeBeam.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gaurav-yadav/CodeBeam/issues"
+  },
+  "homepage": "https://github.com/gaurav-yadav/CodeBeam#readme",
+  "dependencies": {
+    "clipboardy": "^4.0.0",
+    "node-notifier": "^10.0.1"
+  },
+  "type": "module",
+  "bin": "src/index.js"
+}

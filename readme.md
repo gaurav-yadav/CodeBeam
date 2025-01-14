@@ -1,6 +1,6 @@
-# Error Monitor
+# CodeBeam
 
-An intelligent error monitoring system that automatically detects errors in log files and generates AI-ready prompts for quick problem resolution. The system watches both log files and clipboard content, making it easy to implement AI-suggested fixes.
+A powerful tool that enables seamless code transfer from browser to IDE with intelligent error monitoring capabilities. It watches clipboard content for special directives and automatically handles file operations, while also monitoring logs for errors and generating AI-ready prompts for quick problem resolution.
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Version](https://img.shields.io/badge/version-1.0.0-green.svg)
@@ -8,23 +8,23 @@ An intelligent error monitoring system that automatically detects errors in log 
 
 ## Features
 
+- 📋 Seamless code transfer from browser to IDE
+- ⚡ Automatic file creation and updates
 - 🔍 Real-time error detection in log files
 - 🤖 AI-ready error analysis prompts
-- 📋 Clipboard monitoring for automated fixes
-- 📊 Error statistics and reporting
 - 🎯 Customizable error patterns
 - 📝 Custom prompt templates
-- ⚡ File watching or polling modes
+- 📊 Error statistics and reporting
 - 🔔 Desktop notifications
 
 ## Installation
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/error-monitor.git
+git clone https://github.com/gaurav-yadav/CodeBeam.git
 
 # Navigate to the project directory
-cd error-monitor
+cd CodeBeam
 
 # Install dependencies
 npm install
@@ -33,14 +33,42 @@ npm install
 ## Quick Start
 
 ```bash
-# Basic usage with default settings
-node error-monitor.js
+# Start CodeBeam
+npm start
+
+# Start with specific log file
+npm run dev
+
+# Or use node directly
+node src/index.js
 
 # Monitor a specific log file
-node error-monitor.js --log /path/to/your/app.log
+node src/index.js --log /path/to/your/app.log
 
 # Show help
-node error-monitor.js --help
+node src/index.js --help
+```
+
+## Code Transfer Format
+
+CodeBeam watches for clipboard content in the following format:
+
+```
+#auto-ai [command]
+/path/to/file
+content...
+```
+
+Commands:
+- `replace` (default): Overwrites the file
+- `append`: Adds content to the end of the file
+
+Example:
+```
+#auto-ai replace
+/src/utils/math.js
+const add = (a, b) => a + b;
+const multiply = (a, b) => a * b;
 ```
 
 ## Command Line Options
@@ -81,7 +109,7 @@ Create a JSON file with your error patterns:
 
 Use it with:
 ```bash
-node error-monitor.js --patterns ./patterns.json
+node src/index.js --patterns ./patterns.json
 ```
 
 ### Custom Prompt Template
@@ -107,22 +135,8 @@ Analysis needed:
 
 Use it with:
 ```bash
-node error-monitor.js --prompt ./prompt.txt
+node src/index.js --prompt ./prompt.txt
 ```
-
-## Auto-AI Format
-
-The monitor watches for clipboard content in the following format:
-
-```
-#auto-ai [command]
-/path/to/file
-content...
-```
-
-Commands:
-- `replace` (default): Overwrites the file
-- `append`: Adds content to the end of the file
 
 ## Error Statistics
 
@@ -144,7 +158,6 @@ A report is generated when the monitor is shut down (Ctrl+C).
 
 - `clipboardy`: Clipboard access
 - `node-notifier`: Desktop notifications
-- Other dependencies listed in package.json
 
 ## Contributing
 
@@ -161,25 +174,19 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Support
 
 If you're having any problems, please:
-1. Check the [Issues](https://github.com/yourusername/error-monitor/issues) page
+1. Check the [Issues](https://github.com/gaurav-yadav/CodeBeam/issues) page
 2. Create a new issue if needed
-3. Join our [Discord community](your-discord-link)
+
+## Roadmap
+
+- [ ] Add support for multiple file watchers
+- [ ] Implement pattern learning for common code blocks
+- [ ] Add web interface for monitoring
+- [ ] Support for more notification channels
+- [ ] Add pattern marketplace for common code snippets
+- [ ] IDE plugins for direct integration
 
 ## Acknowledgments
 
 - Thanks to all contributors
-- Inspired by various error monitoring solutions
-- Built with ❤️ by [Your Name/Organization]
-
-## Roadmap
-
-- [ ] Add support for multiple log files
-- [ ] Implement error pattern learning
-- [ ] Add web interface for monitoring
-- [ ] Support for more notification channels
-- [ ] Add error pattern marketplace
-
-## Related Projects
-
-- [Your Other Project](link)
-- [Another Related Tool](link)
+- Built with ❤️ by Gaurav Yadav
